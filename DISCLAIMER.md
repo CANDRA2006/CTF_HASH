@@ -1,0 +1,1 @@
+This tool is intended for educational purposes, Capture The Flag (CTF) competitions, and authorized security testing only.
