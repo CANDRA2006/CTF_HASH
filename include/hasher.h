@@ -1,8 +1,9 @@
 #ifndef HASHER_H
 #define HASHER_H
 
-#include "types.h"
+#include <string>
+#include "hash_types.h"
 
-string hash_string(const string& input, HashType type);
+std::string hash_string(const std::string& input, HashType type);
 
 #endif

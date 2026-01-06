@@ -1,40 +1,55 @@
 #include "hasher.h"
-#include <openssl/evp.h>
+#include <openssl/md5.h>
+#include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>
 
-using namespace std;
+using std::string;
 
 string hash_string(const string& input, HashType type) {
-    const EVP_MD* md = nullptr;
+    unsigned char hash[SHA256_DIGEST_LENGTH];
 
-    switch (type) {
-        case HASH_MD5:
-            md = EVP_md5();
-            break;
-        case HASH_SHA1:
-            md = EVP_sha1();
-            break;
-        case HASH_SHA256:
-            md = EVP_sha256();
-            break;
-        default:
-            return "";
+    if (type == HASH_MD5) {
+        MD5(
+            reinterpret_cast<const unsigned char*>(input.c_str()),
+            input.length(),
+            hash
+        );
+        std::ostringstream oss;
+        for (int i = 0; i < MD5_DIGEST_LENGTH; i++) {
+            oss << std::hex << std::setw(2) << std::setfill('0')
+                << static_cast<int>(hash[i]);
+        }
+        return oss.str();
     }
 
-    EVP_MD_CTX* ctx = EVP_MD_CTX_new();
-    unsigned char hash[EVP_MAX_MD_SIZE];
-    unsigned int len = 0;
-
-    EVP_DigestInit_ex(ctx, md, nullptr);
-    EVP_DigestUpdate(ctx, input.c_str(), input.size());
-    EVP_DigestFinal_ex(ctx, hash, &len);
-    EVP_MD_CTX_free(ctx);
-
-    stringstream ss;
-    for (unsigned int i = 0; i < len; i++) {
-        ss << hex << setw(2) << setfill('0') << (int)hash[i];
+    if (type == HASH_SHA1) {
+        SHA1(
+            reinterpret_cast<const unsigned char*>(input.c_str()),
+            input.length(),
+            hash
+        );
+        std::ostringstream oss;
+        for (int i = 0; i < SHA_DIGEST_LENGTH; i++) {
+            oss << std::hex << std::setw(2) << std::setfill('0')
+                << static_cast<int>(hash[i]);
+        }
+        return oss.str();
     }
 
-    return ss.str();
+    if (type == HASH_SHA256) {
+        SHA256(
+            reinterpret_cast<const unsigned char*>(input.c_str()),
+            input.length(),
+            hash
+        );
+        std::ostringstream oss;
+        for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+            oss << std::hex << std::setw(2) << std::setfill('0')
+                << static_cast<int>(hash[i]);
+        }
+        return oss.str();
+    }
+
+    return "";
 }

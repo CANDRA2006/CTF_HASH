@@ -1,13 +1,14 @@
 #ifndef DICTIONARY_ATTACK_H
 #define DICTIONARY_ATTACK_H
 
-#include "types.h"
+#include <string>
+#include "hash_types.h"
 
 bool dictionary_attack(
-    const string& target_hash,
+    const std::string& target_hash,
+    const std::string& wordlist_path,
     HashType hash_type,
-    const string& wordlist_path,
-    string& result
+    std::string& result
 );
 
 #endif

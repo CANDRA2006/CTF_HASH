@@ -5,10 +5,10 @@
 using namespace std;
 
 enum HashType {
-    HASH_MD5,
-    HASH_SHA1,
-    HASH_SHA256,
-    HASH_UNKNOWN
+    MD5,
+    SHA1,
+    SHA256,
+    UNKNOWN
 };
 
 #endif
