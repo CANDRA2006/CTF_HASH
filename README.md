@@ -204,14 +204,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Future Enhancements
-- [ ] Support for more hash types (bcrypt, scrypt, etc.)
-- [ ] Rule-based mutations
-- [ ] Multi-threading support
-- [ ] GPU acceleration
-- [ ] Brute-force mode
-- [ ] Rainbow table support
-
 ---
 
 ## 📄 License
