@@ -187,9 +187,6 @@ The compiled binary will be located in the `build/` directory.
 ---
 
 ## 📚 Additional Documentation
-
-- **[DISCLAIMER.md](DISCLAIMER.md)** — Legal disclaimer and intended use
-- **[threat_model.md](threat_model.md)** — Security threat model and risk analysis
 - **[LICENSE](LICENSE)** — MIT License details
 
 ---
@@ -217,8 +214,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **This tool is intended for educational purposes, Capture The Flag (CTF) competitions, and authorized security testing only.**
 
 **Unauthorized access to computer systems is illegal.** Users are responsible for ensuring they have proper authorization before using this tool. The developers assume no liability for misuse or damage caused by this software.
-
-For full disclaimer, please read [DISCLAIMER.md](DISCLAIMER.md).
 
 ---
 
