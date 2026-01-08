@@ -108,7 +108,7 @@ brew install cmake ninja openssl
 ### Clone the Repository
 ```bash
 git clone https://github.com/candra2006/ctf_hash.git
-cd ctf-hash-cracker
+cd ctf_hash
 ```
 
 ### Build Instructions (Windows – MSYS2 MinGW64)
