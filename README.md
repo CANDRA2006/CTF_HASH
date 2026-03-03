@@ -1,4 +1,4 @@
-# CTF Hash Cracker
+## CTF Hash Cracker
 
 CTF Hash Cracker is a **command-line interface (CLI) tool written in C++** designed to **automatically detect cryptographic hash types** and perform **dictionary-based attacks**.  
 This project is intended for **Capture The Flag (CTF) challenges, cryptography education, and introductory security research**.
